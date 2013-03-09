@@ -19,6 +19,8 @@
 		490EC86516EB185F00E30C37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 490EC86416EB185F00E30C37 /* ViewController.m */; };
 		490EC86816EB185F00E30C37 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490EC86616EB185F00E30C37 /* ViewController_iPhone.xib */; };
 		490EC86B16EB185F00E30C37 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490EC86916EB185F00E30C37 /* ViewController_iPad.xib */; };
+		491BDD7716EB1AE3002519E7 /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 491BDD7516EB1AE3002519E7 /* Player.png */; };
+		491BDD7816EB1AE3002519E7 /* Player@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 491BDD7616EB1AE3002519E7 /* Player@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		490EC86416EB185F00E30C37 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		490EC86716EB185F00E30C37 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		490EC86A16EB185F00E30C37 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		491BDD7516EB1AE3002519E7 /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
+		491BDD7616EB1AE3002519E7 /* Player@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Player@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 				490EC85B16EB185F00E30C37 /* AppDelegate.m */,
 				490EC86316EB185F00E30C37 /* ViewController.h */,
 				490EC86416EB185F00E30C37 /* ViewController.m */,
+				491BDD7516EB1AE3002519E7 /* Player.png */,
+				491BDD7616EB1AE3002519E7 /* Player@2x.png */,
 				490EC86616EB185F00E30C37 /* ViewController_iPhone.xib */,
 				490EC86916EB185F00E30C37 /* ViewController_iPad.xib */,
 				490EC85216EB185F00E30C37 /* Supporting Files */,
@@ -167,6 +173,8 @@
 				490EC86216EB185F00E30C37 /* Default-568h@2x.png in Resources */,
 				490EC86816EB185F00E30C37 /* ViewController_iPhone.xib in Resources */,
 				490EC86B16EB185F00E30C37 /* ViewController_iPad.xib in Resources */,
+				491BDD7716EB1AE3002519E7 /* Player.png in Resources */,
+				491BDD7816EB1AE3002519E7 /* Player@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +320,7 @@
 				490EC87016EB185F00E30C37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
