@@ -41,6 +41,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return YES;
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if (toInterfaceOrientation==UIDeviceOrientationLandscapeLeft || toInterfaceOrientation==UIDeviceOrientationLandscapeRight) {
+        self.thrustControl.center=CGPointMake(self.thrustControl.bounds.size.width/2,self.thrustControl.bounds.size.height); // iphone & ipad landscape (top left corner, but down a bit)
+    } else {
+        if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+        {
+            self.thrustControl.center=CGPointMake(84, 885);  // ipad portrait (values from .xib file)
+        } else {
+            self.thrustControl.center=CGPointMake(44, 410);  // iphone portrait (values from .xib file)
+        }
+    }
+}
 
 #pragma mark Touch Events
 
