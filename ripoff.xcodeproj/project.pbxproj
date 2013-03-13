@@ -21,6 +21,8 @@
 		490EC86B16EB185F00E30C37 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490EC86916EB185F00E30C37 /* ViewController_iPad.xib */; };
 		491BDD7716EB1AE3002519E7 /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 491BDD7516EB1AE3002519E7 /* Player.png */; };
 		491BDD7816EB1AE3002519E7 /* Player@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 491BDD7616EB1AE3002519E7 /* Player@2x.png */; };
+		491CBAFE16EDEF7C00FCA627 /* ThrustControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 491CBAFD16EDEF7C00FCA627 /* ThrustControl.m */; };
+		4987AEBA16F025DD003B4F12 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4987AEB916F025DD003B4F12 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,9 @@
 		490EC86A16EB185F00E30C37 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		491BDD7516EB1AE3002519E7 /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
 		491BDD7616EB1AE3002519E7 /* Player@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Player@2x.png"; sourceTree = "<group>"; };
+		491CBAFC16EDEF7C00FCA627 /* ThrustControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrustControl.h; sourceTree = "<group>"; };
+		491CBAFD16EDEF7C00FCA627 /* ThrustControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrustControl.m; sourceTree = "<group>"; };
+		4987AEB916F025DD003B4F12 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,9 +55,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4987AEBA16F025DD003B4F12 /* QuartzCore.framework in Frameworks */,
+				490EC85016EB185F00E30C37 /* CoreGraphics.framework in Frameworks */,
 				490EC84C16EB185F00E30C37 /* UIKit.framework in Frameworks */,
 				490EC84E16EB185F00E30C37 /* Foundation.framework in Frameworks */,
-				490EC85016EB185F00E30C37 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +68,7 @@
 		490EC83F16EB185F00E30C37 = {
 			isa = PBXGroup;
 			children = (
+				4987AEB916F025DD003B4F12 /* QuartzCore.framework */,
 				490EC85116EB185F00E30C37 /* ripoff */,
 				490EC84A16EB185F00E30C37 /* Frameworks */,
 				490EC84916EB185F00E30C37 /* Products */,
@@ -97,6 +104,8 @@
 				491BDD7616EB1AE3002519E7 /* Player@2x.png */,
 				490EC86616EB185F00E30C37 /* ViewController_iPhone.xib */,
 				490EC86916EB185F00E30C37 /* ViewController_iPad.xib */,
+				491CBAFC16EDEF7C00FCA627 /* ThrustControl.h */,
+				491CBAFD16EDEF7C00FCA627 /* ThrustControl.m */,
 				490EC85216EB185F00E30C37 /* Supporting Files */,
 			);
 			path = ripoff;
@@ -188,6 +197,7 @@
 				490EC85816EB185F00E30C37 /* main.m in Sources */,
 				490EC85C16EB185F00E30C37 /* AppDelegate.m in Sources */,
 				490EC86516EB185F00E30C37 /* ViewController.m in Sources */,
+				491CBAFE16EDEF7C00FCA627 /* ThrustControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

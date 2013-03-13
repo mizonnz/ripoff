@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import "ThrustControl.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <ThrustControlDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *gameView;
 @property (strong, nonatomic) IBOutlet UIImageView *playerView;
@@ -22,9 +24,13 @@
 @property BOOL leftButtonDown;
 @property BOOL rightButtonDown;
 @property BOOL thrustButtonDown;
+@property (strong, nonatomic) IBOutlet ThrustControl *thrustControl;
+@property (strong, nonatomic) CADisplayLink *displayLink;
 
 -(void) gameTimer;
 -(void) movePlayerTo:(CGPoint) location;
+-(void) thrustControlValueChanged:(ThrustControl *)thrustControl;
+
 - (IBAction)changedControls:(id)sender;
 - (IBAction)LeftButtonPressed:(id)sender;
 - (IBAction)leftButtonReleased:(id)sender;
@@ -32,5 +38,6 @@
 - (IBAction)rightButtonReleased:(id)sender;
 - (IBAction)thrustButtonPressed:(id)sender;
 - (IBAction)thrustButtonReleased:(id)sender;
+
 
 @end
