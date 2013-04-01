@@ -24,6 +24,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.cattle=[NSMutableArray array];
+    for (int i=0; i<8; i++) {
+        UIImageView *cow=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Cattle.png"]];
+        cow.center=CGPointMake( 130+(65*(i>3)),(i%4) * 30+100);
+        [self.cattle addObject:cow];
+        [self.gameView addSubview:cow];
+    }
     self.playerVector=CGPointMake(0,0);
     self.touchDown=NO;
     self.leftButtonDown=NO;
@@ -100,6 +107,13 @@
 {
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);  //dispatch_queue_create("gameUpdate", DISPATCH_QUEUE_CONCURRENT);
     dispatch_async (queue, ^(void){
+        
+        if (CGRectIntersectsRect(self.playerView.frame, self.enemyView.frame))
+        {
+            self.cowHeldByEnemy=nil;
+            self.enemyView.center=CGPointMake(20, 20);
+        }
+        
         if (self.currentControl.selectedSegmentIndex==1)
         {
             double vectorAngle=atan2(self.playerVector.y, self.playerVector.x);
@@ -120,12 +134,61 @@
         if (!self.touchDown) self.playerVector=CGPointMake(self.playerVector.x*PLAYERFRICTION, self.playerVector.y*PLAYERFRICTION);
         player=CGPointMake(player.x+self.playerVector.x, player.y+self.playerVector.y);
         double playerAngle=atan2(-self.playerVector.y, -self.playerVector.x);
+        
+        CGPoint enemy=self.enemyView.center;
+        float enemyAngle=0;
+        if (self.cowHeldByEnemy==nil)
+        {
+            float dist=99999;
+            UIImageView *nearestCow=nil;
+            for (UIImageView *checkCow in self.cattle) {
+                float diffX=checkCow.center.x-self.enemyView.center.x;
+                float diffY=checkCow.center.y-self.enemyView.center.y;
+                float diff=(diffX*diffX)+(diffY*diffY);
+                if (diff<dist)
+                {
+                    dist=diff;
+                    nearestCow=checkCow;
+                }
+            }
+            float diffX=nearestCow.center.x-self.enemyView.center.x;
+            float diffY=nearestCow.center.y-self.enemyView.center.y;
+            enemyAngle=atan2(diffY, diffX);
+            enemy=CGPointMake(enemy.x+cos(enemyAngle), enemy.y+sin(enemyAngle));
+            if (dist<100) self.cowHeldByEnemy=nearestCow;  // if distane is less than 10 (sqrt 100) grab the cow
+        } else {
+            float topDist=self.enemyView.center.y;
+            float bottomDist=self.gameView.bounds.size.height-self.enemyView.center.y;
+            float leftDist=self.enemyView.center.x;
+            float rightDist=self.gameView.bounds.size.width-self.enemyView.center.x;
+            if (topDist<bottomDist && topDist<leftDist && topDist<rightDist) enemyAngle=1.5*M_PI;
+            if (bottomDist<topDist && bottomDist<leftDist && bottomDist<rightDist) enemyAngle=0.5*M_PI;
+            if (leftDist<topDist && leftDist<bottomDist && leftDist<rightDist) enemyAngle=M_PI;
+            if (rightDist<topDist && rightDist<bottomDist && rightDist<leftDist) enemyAngle=0;
+            enemy=CGPointMake(enemy.x+cos(enemyAngle), enemy.y+sin(enemyAngle));
+            if (topDist<0 || bottomDist<0 || leftDist<0 || rightDist<0)
+            {
+                [self.cowHeldByEnemy removeFromSuperview];
+                [self.cattle removeObject:self.cowHeldByEnemy];
+                self.cowHeldByEnemy=nil;
+            }
+        }
+        
         dispatch_queue_t mainQueue = dispatch_get_main_queue();
         dispatch_async(mainQueue, ^(void){
             CGPoint oldcentre=self.playerView.center;
             self.playerView.center=player;
             if (!CGRectContainsRect(self.gameView.bounds, self.playerView.frame)) self.playerView.center=oldcentre;
             self.playerView.transform=CGAffineTransformMakeRotation(playerAngle);
+            self.enemyView.center=enemy;
+            self.enemyView.transform=CGAffineTransformMakeRotation(enemyAngle+M_PI);
+            if (self.cowHeldByEnemy)
+            {
+                float cowX=self.enemyView.center.x-(cos(enemyAngle)*20);
+                float cowY=self.enemyView.center.y-(sin(enemyAngle)*20);
+                self.cowHeldByEnemy.center=CGPointMake(cowX, cowY);
+                self.cowHeldByEnemy.transform=CGAffineTransformMakeRotation(enemyAngle+M_PI);
+            }
         });
     });
 //    dispatch_release(queue);
@@ -192,4 +255,8 @@
     self.thrustButtonDown=NO;
 }
 
+- (void)viewDidUnload {
+    [self setEnemyView:nil];
+    [super viewDidUnload];
+}
 @end

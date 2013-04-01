@@ -23,6 +23,10 @@
 		491BDD7816EB1AE3002519E7 /* Player@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 491BDD7616EB1AE3002519E7 /* Player@2x.png */; };
 		491CBAFE16EDEF7C00FCA627 /* ThrustControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 491CBAFD16EDEF7C00FCA627 /* ThrustControl.m */; };
 		4987AEBA16F025DD003B4F12 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4987AEB916F025DD003B4F12 /* QuartzCore.framework */; };
+		49B352771706537F00006610 /* Cattle.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B352751706537F00006610 /* Cattle.png */; };
+		49B352781706537F00006610 /* Cattle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B352761706537F00006610 /* Cattle@2x.png */; };
+		49B3527B170657DF00006610 /* Enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B35279170657DF00006610 /* Enemy.png */; };
+		49B3527C170657DF00006610 /* Enemy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B3527A170657DF00006610 /* Enemy@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		491CBAFC16EDEF7C00FCA627 /* ThrustControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrustControl.h; sourceTree = "<group>"; };
 		491CBAFD16EDEF7C00FCA627 /* ThrustControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrustControl.m; sourceTree = "<group>"; };
 		4987AEB916F025DD003B4F12 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		49B352751706537F00006610 /* Cattle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cattle.png; sourceTree = "<group>"; };
+		49B352761706537F00006610 /* Cattle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cattle@2x.png"; sourceTree = "<group>"; };
+		49B35279170657DF00006610 /* Enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Enemy.png; sourceTree = "<group>"; };
+		49B3527A170657DF00006610 /* Enemy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Enemy@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +108,16 @@
 				490EC85B16EB185F00E30C37 /* AppDelegate.m */,
 				490EC86316EB185F00E30C37 /* ViewController.h */,
 				490EC86416EB185F00E30C37 /* ViewController.m */,
-				491BDD7516EB1AE3002519E7 /* Player.png */,
-				491BDD7616EB1AE3002519E7 /* Player@2x.png */,
 				490EC86616EB185F00E30C37 /* ViewController_iPhone.xib */,
 				490EC86916EB185F00E30C37 /* ViewController_iPad.xib */,
 				491CBAFC16EDEF7C00FCA627 /* ThrustControl.h */,
 				491CBAFD16EDEF7C00FCA627 /* ThrustControl.m */,
+				491BDD7516EB1AE3002519E7 /* Player.png */,
+				491BDD7616EB1AE3002519E7 /* Player@2x.png */,
+				49B352751706537F00006610 /* Cattle.png */,
+				49B352761706537F00006610 /* Cattle@2x.png */,
+				49B35279170657DF00006610 /* Enemy.png */,
+				49B3527A170657DF00006610 /* Enemy@2x.png */,
 				490EC85216EB185F00E30C37 /* Supporting Files */,
 			);
 			path = ripoff;
@@ -184,6 +196,10 @@
 				490EC86B16EB185F00E30C37 /* ViewController_iPad.xib in Resources */,
 				491BDD7716EB1AE3002519E7 /* Player.png in Resources */,
 				491BDD7816EB1AE3002519E7 /* Player@2x.png in Resources */,
+				49B352771706537F00006610 /* Cattle.png in Resources */,
+				49B352781706537F00006610 /* Cattle@2x.png in Resources */,
+				49B3527B170657DF00006610 /* Enemy.png in Resources */,
+				49B3527C170657DF00006610 /* Enemy@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

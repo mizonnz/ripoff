@@ -14,7 +14,9 @@
 
 @property (strong, nonatomic) IBOutlet UIView *gameView;
 @property (strong, nonatomic) IBOutlet UIImageView *playerView;
+@property (strong, nonatomic) IBOutlet UIImageView *enemyView;
 @property CGPoint playerVector;
+@property (weak, nonatomic) UIImageView *cowHeldByEnemy;
 @property BOOL touchDown;
 @property (strong, nonatomic) IBOutlet UILabel *controlsLabel;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *currentControl;
@@ -26,6 +28,7 @@
 @property BOOL thrustButtonDown;
 @property (strong, nonatomic) IBOutlet ThrustControl *thrustControl;
 @property (strong, nonatomic) CADisplayLink *displayLink;
+@property (strong, nonatomic) NSMutableArray *cattle;
 
 -(void) gameTimer;
 -(void) movePlayerTo:(CGPoint) location;
